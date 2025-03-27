@@ -1,7 +1,7 @@
 import { renderHtml } from "./renderHtml";
 
 export default {
-  async fetch(request, env) {
+  async fetch(request: Request, env: Env) {
     const stmt = env.DB.prepare("SELECT * FROM courses LIMIT 5");
     const { results } = await stmt.all();
 
